@@ -1,0 +1,57 @@
+services:
+  nginx:
+    container_name: nginx
+    build: ./requirements/nginx/
+    volumes:
+      - wp:/var/www/html
+    networks:
+      - link
+    depends_on:
+      - wordpress
+    ports:
+      - "433:433"
+    env_file: .env
+    restart: on-failure
+
+  wordpress:
+    container_name: wordpress
+    build: ./requirements/wordpress/
+    volumes:
+      - wp:/var/www/html
+    networks:
+      - link
+    depends_on:
+      - mariadb
+    env_file: .env
+    restart: on-failure
+
+  mariadb:
+    container_name: mariadb
+    build: ./requirements/mariadb/
+    volumes:
+      - mdb:/var/lib/mysql
+    networks:
+      - link
+    expose:
+      - "3306"
+    env_file: .env
+    restart: on-failure
+
+volumes:
+  wp:
+    driver: local
+    driver_opts:
+      device: /home/mamichal/data/wp
+      o: "bind"
+      type: "none"
+  mdb:
+    driver: local
+    driver_opts:
+      device: /home/mamichal/data/mdb
+      o: "bind"
+      type: "none"
+
+networks:
+  link:
+    driver: bridge
+
