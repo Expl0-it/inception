@@ -1,10 +1,13 @@
-FROM	debian:bookworm
+# container's operating system
+FROM debian:bookworm
 
-RUN	apt-get update -y
-RUN	apt-get upgrade -y
-RUN	apt-get install nginx -y
-RUN	apt-get install openssl -y
+# containers packages
+RUN apt update -y
+RUN apt upgrade -y
+RUN apt install nginx -y
+RUN apt install openssl -y
 
+# container's config
 RUN adduser \
 	--system \
 	--no-create-home \
@@ -21,15 +24,15 @@ RUN openssl req \
 	-newkey rsa:4096 \
 	-keyout /etc/nginx/ssl/private.key \
 	-out /etc/nginx/ssl/cert.crt \
-	-subj "/C=PL/ST=Masovia/L=Warsaw/O=42Warsaw/OU=students/CN=$WP_DOMAIN/UID=$MYUID"
-#possible mistake with variables upwords
+	-subj "/C=PL/ST=Masovia/L=Warsaw/O=42Warsaw/OU=students/CN=mamichal.42.fr/UID=mamichal"
 
+COPY ./config/default /etc/nginx/sites-available/default
 
-COPY	./config/default /etc/nginx/sites-available/default
-
-RUN	chmod 755 /var/www/html
+RUN chmod 755 /var/www/html
 RUN chown -R www-data:www-data /var/www/html
 
+# port expose
 EXPOSE 443
 
+# service starting
 CMD [ "nginx", "-g", "daemon off;" ]

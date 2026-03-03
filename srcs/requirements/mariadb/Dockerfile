@@ -1,12 +1,17 @@
-FROM	debian:bookworm
+# container's operating system
+FROM debian:bookworm
 
-RUN	apt-get update -y
-RUN	apt-get upgrade -y
-RUN	apt-get install mariadb-server -y
+# container's packages
+RUN apt update -y
+RUN apt upgrade -y
+RUN apt install mariadb-server -y
 
-COPY	./config/setup.sh /
-RUN	chmod +x /setup.sh
+# container's config script
+COPY ./config/script.sh /
+RUN chmod +x /script.sh
 
-EXPOSE 3306
+# port expose
+EXPOSE	3306
 
-CMD [ "/setup.sh" ]
+# running the config script
+CMD [ "/script.sh" ]
