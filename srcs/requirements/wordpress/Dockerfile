@@ -22,7 +22,7 @@ RUN mv wp-cli.phar /usr/local/bin/wp-cli.phar
 
 
 COPY	./config/setup.sh /
-RUN	chmod +x /setup.sh
+RUN	chmod 777 /setup.sh
 
 EXPOSE 9000
 

@@ -2,8 +2,8 @@
 
 set -x
 
-sed -i 's/bind-adress .*=.*/bind-adress = 0.0.0.0/g' /etc/mysql/mariadb.conf.d/50-server.cnf
-sed -i '/^#port/c\port = 3306' /etc/mysql.mariadb.conf.d/50-server.cnf
+sed -i 's/bind-address .*=.*/bind-address = 0.0.0.0/g' /etc/mysql/mariadb.conf.d/50-server.cnf
+sed -i '/^#port/c\port = 3306' /etc/mysql/mariadb.conf.d/50-server.cnf
 
 service mariadb start
 
