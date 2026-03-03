@@ -29,7 +29,7 @@ fclean: down clean
 re: fclean all
 
 status:
-	docker -ps
+	docker ps
 
 logs:
 	echo "\n[ LOGS: mariadb ]\n"
