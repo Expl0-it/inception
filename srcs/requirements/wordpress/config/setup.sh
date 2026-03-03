@@ -40,4 +40,4 @@ wp-cli.phar plugin update --all --allow-root
 
 chmod 777 /var/www/html/wp-content
 
-/usr/sbin/php-fpm7.4 -F
+/usr/sbin/php-fpm8.2 -F
