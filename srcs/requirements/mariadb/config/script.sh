@@ -12,6 +12,6 @@ mariadb -e "CREATE USER IF NOT EXISTS '$MARIADB_ADMIN_USER'@'%' IDENTIFIED BY '$
 mariadb -e "GRANT ALL PRIVILEGES ON $MARIADB_DBNAME.* TO '$MARIADB_ADMIN_USER'@'%' IDENTIFIED BY '$MARIADB_ROOT_PSWD' ;"
 mariadb -e "FLUSH PRIVILEGES;"
 
-#service mariadb stop
+service mariadb stop
 
 exec mysqld_safe
