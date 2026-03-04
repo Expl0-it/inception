@@ -1,4 +1,4 @@
-COMPOSE_FILE = ./srcs/docker-compose.yml
+COMPOSE_FILE = ./srcs/docker-compose.yaml
 LOGIN42 = mamichal
 
 all: up
