@@ -8,7 +8,7 @@ sed -i '/^#port/c\port = 3306' /etc/mysql/mariadb.conf.d/50-server.cnf
 chmod 777 /var/run/mydqld/mysqld.sock
 socket=/var/lib/mysql/mysql.sock
 
-sudo service mysql start
+service mysql start
 
 service mariadb start
 
