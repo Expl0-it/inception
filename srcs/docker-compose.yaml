@@ -5,11 +5,11 @@ services:
     volumes:
       - wp:/var/www/html
     networks:
-      - link
+      - inception
     depends_on:
       - wordpress
     ports:
-      - "433:433"
+      - "443:443"
     env_file: .env
     restart: on-failure
 
@@ -19,7 +19,7 @@ services:
     volumes:
       - wp:/var/www/html
     networks:
-      - link
+      - inception
     depends_on:
       - mariadb
     env_file: .env
@@ -31,7 +31,7 @@ services:
     volumes:
       - mdb:/var/lib/mysql
     networks:
-      - link
+      - inception
     expose:
       - "3306"
     env_file: .env
@@ -52,6 +52,5 @@ volumes:
       type: "none"
 
 networks:
-  link:
+  inception:
     driver: bridge
-
