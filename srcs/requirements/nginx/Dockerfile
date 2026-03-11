@@ -24,7 +24,7 @@ RUN openssl req \
 	-newkey rsa:4096 \
 	-keyout /etc/nginx/ssl/private.key \
 	-out /etc/nginx/ssl/cert.crt \
-	-subj "/C=PL/ST=Masovia/L=Warsaw/O=42Warsaw/OU=students/CN=$NICK42.42.fr/UID=$NICK42"
+	-subj "/C=PL/ST=Masovia/L=Warsaw/O=42Warsaw/OU=students/CN=$NICK.42.fr/UID=$NICK"
 
 COPY ./config/default /etc/nginx/sites-available/default
 
