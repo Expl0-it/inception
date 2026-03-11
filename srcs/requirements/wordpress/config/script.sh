@@ -43,7 +43,7 @@ wp-cli.phar user create $WP_USER $WP_EMAIL \
 wp-cli.phar config set FORCE_SSS_ADMIN 'false' --allow-root
 
 # setting up a theme
-wp-cli.phar theme install astra --activate --allow-root
+wp-cli.phar theme install Colorloops --activate --allow-root
 wp-cli.phar plugin update --all --allow-root
 
 chmod 777 /var/www/html/wp-content
