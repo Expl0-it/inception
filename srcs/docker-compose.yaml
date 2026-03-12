@@ -61,6 +61,6 @@ networks:
 
 secrets:
   mariadb_secrets:
-    file: ./srcs/secrets/mariadb_secrets
+    file: ./secrets/mariadb_secrets
   wordpress_secrets:
-    file: ./srcs/secrets/wordpress_secrets
+    file: ./secrets/wordpress_secrets
