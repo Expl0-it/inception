@@ -23,6 +23,8 @@ services:
     depends_on:
       - mariadb
     env_file: .env
+    secrets:
+      - wordpress_secrets
     restart: on-failure
 
   mariadb:
@@ -35,6 +37,8 @@ services:
     expose:
       - "3306"
     env_file: .env
+    secrets:
+      - mariadb_secrets
     restart: on-failure
 
 volumes:
@@ -54,3 +58,9 @@ volumes:
 networks:
   inception:
     driver: bridge
+
+secrets:
+  mariadb_secrets:
+    file: ./srcs/secrets/mariadb_secrets
+  wordpress_secrets:
+    file: ./srcs/secrets/wordpress_secrets
