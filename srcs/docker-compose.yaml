@@ -25,6 +25,7 @@ services:
     env_file: .env
     secrets:
       - wordpress_secrets
+      - mariadb_secrets
     restart: on-failure
 
   mariadb:
