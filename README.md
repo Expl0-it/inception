@@ -7,15 +7,20 @@
 This project aims to broaden systems administration knowledge and is heavily
 focused on usage of Docker.  
 It is designed to be run on the virtual machine.  
-The containers are set-up using debian:bookworm  
+The containers are set-up using debian:bookworm as an underlying operating
+system  
   
 ### Theory
 
 * Virtual Machine vs Docker:
-A VM virtualizes the hardware to run an entire operating system, while Docker virtualizes the operating system to run specific applications  
+A VM virtualizes the hardware to run an entire operating system,
+while Docker virtualizes the operating system to run specific applications  
 * Secrets vs Enviroment Variables:
-Environment variables are used for non-sensitive data that changes depending on where the code is running  
-Secrets are a specific type of environment variable that contain sensitive information. If these are leaked, an attacker could gain unauthorized access to your data or services  
+Environment variables are used for non-sensitive data that changes depending
+on where the code is running  
+Secrets are a specific type of environment variable that contain sensitive information.
+If these are leaked, an attacker could gain unauthorized access to your data
+or services  
 
 ## Requirements
 
