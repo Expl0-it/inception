@@ -68,6 +68,7 @@ make down
 
 > [!WARNING]
 > Below will delete all the container data
+
 To cleanup space taken by the containers run either:
 
 ```make
