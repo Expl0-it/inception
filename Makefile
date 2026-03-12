@@ -16,7 +16,7 @@ up: create
 down:
 	docker compose -f $(COMPOSE_FILE) down
 
-clean:
+clean: down
 	hostsed rm 127.0.0.1 $(LOGIN42).42.fr
 	docker system prune --all -f
 	docker rm -q $$(docker ps -qa) 2> /dev/null || true
