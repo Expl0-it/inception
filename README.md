@@ -32,7 +32,7 @@ Both are used to persist data so it doesn't vanish when a container stops.
 The main difference between Docker Volumes and Bind Mounts boils down to
 who manages the storage: Docker or you.
 
-## Requirements
+## Prerequisites
 
 * git
 * docker
@@ -41,8 +41,19 @@ who manages the storage: Docker or you.
 
 ## Instructions
 
+### Instalation and execution
+
 **Make sure all the dependencies are installed**  
-To run the project simply clone the repo and run:
+
+1. Cloning the repository  
+
+ ```bash
+ git clone https://github.com/Expl0-it/inception.git
+ ```
+
+2. Setting credentials in srcs/.env based on srcs/.env.template  
+
+3. Running the project  
 
 ```make
 make
