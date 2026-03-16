@@ -51,7 +51,7 @@ who manages the storage: Docker or you.
  git clone https://github.com/Expl0-it/inception.git
  ```
 
-2. Setting credentials in srcs/.env based on srcs/.env.template  
+2. Set credentials in srcs/.env based on srcs/.env.template  
 
 3. Running the project  
 
