@@ -104,5 +104,5 @@ make fclean
 
 ## Resources
 
-* [Docker documentation](https://docs.docker.com/)
-* Disclaimer: No AI was used while developing the project
+- [Docker documentation](https://docs.docker.com/)
+- AI usage: AI was used while preparing the project documentation
