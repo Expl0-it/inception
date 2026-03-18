@@ -4,11 +4,11 @@ LOGIN42 = mamichal
 all: up
 
 create:
-	mkdir -p /home/$(LOGIN42)/data/wp
-	chmod 777 /home/$(LOGIN42)/data/wp
+	hostsed add 127.0.0.1 $(LOGIN42).42.fr
 	mkdir -p /home/$(LOGIN42)/data/mdb
 	chmod 777 /home/$(LOGIN42)/data/mdb
-	hostsed add 127.0.0.1 $(LOGIN42).42.fr
+	mkdir -p /home/$(LOGIN42)/data/wp
+	chmod 777 /home/$(LOGIN42)/data/wp
 
 up: create
 	docker compose -f $(COMPOSE_FILE) up -d --no-deps --build --remove-orphans --wait
@@ -22,7 +22,7 @@ clean: down
 	docker rm -q $$(docker ps -qa) 2> /dev/null || true
 	docker rmi -f $$(docker images -qa) 2> /dev/null || true
 	docker volume rm $$(docker volume ls -q) 2> /dev/null || true
-	rm -rf	/home/$(LOGIN42)/data
+	rm -rf /home/$(LOGIN42)/data
 
 fclean: down clean
 
