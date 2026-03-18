@@ -5,7 +5,7 @@ services:
     volumes:
       - wp:/var/www/html
     networks:
-      - inception
+      - link
     depends_on:
       - wordpress
     ports:
@@ -19,7 +19,7 @@ services:
     volumes:
       - wp:/var/www/html
     networks:
-      - inception
+      - link
     depends_on:
       - mariadb
     env_file: .env
@@ -31,7 +31,7 @@ services:
     volumes:
       - mdb:/var/lib/mysql
     networks:
-      - inception
+      - link
     expose:
       - "3306"
     env_file: .env
@@ -52,5 +52,5 @@ volumes:
       type: "none"
 
 networks:
-  inception:
+  link:
     driver: bridge
