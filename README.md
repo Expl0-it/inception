@@ -1,6 +1,16 @@
+***This project has been created as part of the 42 curriculum by mamichal***
+
 # Inception
 
-***This project has been created as part of the 42 curriculum by mamichal***
+<!--toc:start-->
+- [Inception](#inception)
+  - [Description](#description)
+    - [Theory](#theory)
+  - [Prerequisites](#prerequisites)
+  - [Instructions](#instructions)
+    - [Instalation and execution](#instalation-and-execution)
+  - [Resources](#resources)
+<!--toc:end-->
 
 ## Description
 
@@ -9,35 +19,35 @@ focused on usage of Docker.
 It is designed to be run on the virtual machine.  
 The containers are set-up using debian:bookworm as an underlying operating
 system  
-  
+
 ### Theory
 
-* Virtual Machine vs Docker:  
+- Virtual Machine vs Docker:  
 A VM virtualizes the hardware to run an entire operating system,
 while Docker virtualizes the operating system to run specific applications  
-* Secrets vs Environment Variables:  
+- Secrets vs Environment Variables:  
 Environment variables are used for non-sensitive data that changes depending
 on where the code is running  
 Secrets are a specific type of environment variable that contain sensitive information.
 If these are leaked, an attacker could gain unauthorized access to your data
 or services  
-* Docker Network vs Host Network:  
+- Docker Network vs Host Network:  
 The primary difference between a Docker network and the Host network lies in isolation.
 In a standard Docker network, the container lives in its own "bubble"
 with a private IP.
 In a host network, that bubble is popped,
 and the container shares the computer's actual network identity  
-* Docker Volumes vs Bind Mounts
+- Docker Volumes vs Bind Mounts
 Both are used to persist data so it doesn't vanish when a container stops.
 The main difference between Docker Volumes and Bind Mounts boils down to
 who manages the storage: Docker or you.
 
 ## Prerequisites
 
-* git
-* docker
-* make
-* hostsed
+- git
+- docker
+- make
+- hostsed
 
 ## Instructions
 
