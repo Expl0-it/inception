@@ -1,10 +1,13 @@
+# container's operating system
 FROM debian:bookworm
 
-RUN apt-get update -y
-RUN apt-get upgrade -y
-RUN apt-get install nginx -y
-RUN apt-get install openssl -y
+# containers packages
+RUN apt update -y
+RUN apt upgrade -y
+RUN apt install nginx -y
+RUN apt install openssl -y
 
+# container's config
 RUN adduser \
 	--system \
 	--no-create-home \
@@ -28,6 +31,8 @@ COPY ./config/default /etc/nginx/sites-available/default
 RUN chmod 755 /var/www/html
 RUN chown -R www-data:www-data /var/www/html
 
+# port expose
 EXPOSE 443
 
+# service starting
 CMD [ "nginx", "-g", "daemon off;" ]
