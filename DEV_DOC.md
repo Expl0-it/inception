@@ -47,6 +47,7 @@ networks, and **deletes all physical data volumes**).
 - **View service logs:** `docker logs <container_name>`
 (`nginx`, `wordpress`, `mariadb`)
 - **Access container shell:** `docker exec -it <container_name> bash`
+- **In mariadb shell enter DB:** `mysql -u (adminuser) - p`
 - **Exit shell:** `exit`
 
 ## 4. Data Storage and Persistence
