@@ -18,11 +18,11 @@
   
 **Configuration steps:**
 
-- Initialize your credentials by creating a .env file,
-using the provided .env.example as a template
-- Upon the first execution of make, the hostsed tool should automatically
-append the necessary redirect to your /etc/hosts file
-- Verify that the following entry exists in /etc/hosts and add it manually
+- Initialize your credentials by creating a `.env` file,
+using the provided `.env.template` as a template
+- Upon the first execution of `make`, the `hostsed` tool should automatically
+append the necessary redirect to your `/etc/hosts` file
+- Verify that the following entry exists in `/etc/hosts` and add it manually
 if it is missing:
 
 ```bash
